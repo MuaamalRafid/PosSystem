@@ -239,7 +239,7 @@ export const useMenuStore = defineStore("Menu", {
       {
         id: 6,
         name: "Desserts",
-        icon: "streamline:travel-hotel-serving-dome-cook-tool-dome-kitchen-drink-serving-platter-dish-tools-food-cooking",
+        icon: "maki:fast-food",
         color: "#e5dade",
         items: [{
           id: 1,
@@ -282,7 +282,7 @@ export const useMenuStore = defineStore("Menu", {
       {
         id: 7,
         name: "Drinks",
-        icon: "streamline:travel-hotel-serving-dome-cook-tool-dome-kitchen-drink-serving-platter-dish-tools-food-cooking",
+        icon: "ic:baseline-emoji-food-beverage",
         color: "#f1c8d0",
         items: [{
           id: 1,
@@ -307,7 +307,7 @@ export const useMenuStore = defineStore("Menu", {
       {
         id: 8,
         name: "Alcohol",
-        icon: "mdi:pasta",
+        icon: "healthicons:alcohol",
         color: "#c2e9dd",
         items: [
           {

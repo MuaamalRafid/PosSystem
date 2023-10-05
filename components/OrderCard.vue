@@ -10,7 +10,7 @@
       <div :style="`background-color:${menuStore.Menu[menuStore.selectedIde - 1].color}`" class=" z-0 top-0 left-0 absolute h-full  w-2 rounded-tl-md rounded-bl-md group-hover:w-full group-hover:rounded-md transition-all duration-500"></div>
         <p class="z-10 text-[12px] group-hover:text-MainColor text-gray-400">Odrder --> Kitchen</p>
         <div class="z-10">
-            <h1 class=" font-bold group-hover:text-MainColor text-white">{{item.name}}</h1>
+            <h1 class=" font-bold group-hover:text-MainColor w-96 text-white">{{item.name}}</h1>
             <p class=" group-hover:text-MainColor text-gray-400">{{item.price}}$</p>
         </div>
         <div class=" z-10 self-end flex justify-center items-center gap-4">
