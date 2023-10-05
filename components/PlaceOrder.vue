@@ -1,6 +1,6 @@
 <template>
   <div id="print">
-    <div v-if="orderStore.uniqueOrderItems.length>0" class="max-h-[325px] w-full overflow-hidden  overflow-y-scroll rounded-md">
+    <div v-if="orderStore.uniqueOrderItems.length>0" class="max-h-[325px] w-full print:max-h-full print:overflow-visible  overflow-hidden  overflow-y-scroll rounded-md">
       <div
      
       v-for="(item,index) in orderStore.uniqueOrderItems" :key="item.id"
@@ -8,7 +8,7 @@
 
 
      <div 
-        class="hidden print:flex print:flex-col print:px-2 print:gap-2 print:bg-white w-full   "
+        class="hidden print:flex print:flex-col print:px-2 print:gap-2 print:bg-white w-full  "
       >
         <div class="flex justify-between items-center">
           <div class="flex items-center gap-2">
@@ -35,7 +35,7 @@
       v-if="orderStore.uniqueOrderItems.length>0"
         class=" print:bg-white print:hidden  "
       >
-        <div :id="item.name" class="flex justify-between translate-x-[700px]  p-3 bg-SecondryColor  w-full  mb-2 rounded-md transition-all duration-700">
+        <div :id="item.name" class="flex justify-between   p-3 bg-SecondryColor hide  w-full  mb-2 rounded-md transition-all duration-700 scroll-smooth">
           
           <div class="flex gap-2 justify-center items-center">
             <button @click="remove(item)" class="mr-2 bg-red w-5 h-5 rounded-full flex justify-center items-center text-sm">X</button>
@@ -58,7 +58,7 @@
   <div>
     <div 
      
-      :class="`bg-SecondryColor ${paymentHeight} print:w-full w-full  mt-2 print:bg-white rounded-md gap-8 grow-0 flex flex-col p-4 transition-all duration-1000`"
+      :class="`bg-SecondryColor ${paymentHeight} print:w-full w-full  mt-2 print:bg-white rounded-md gap-8  flex flex-col p-4 transition-all duration-1000`"
     >
 
     <div v-if="orderStore.orderItems.length>0" class="flex flex-col ">
@@ -94,9 +94,9 @@
       </div>
     </div>
 
-      <div class="flex flex-col print:hidden">
+      <div class="flex flex-col  print:hidden">
         <h1>Pyment Method</h1>
-        <div class="flex   gap-4 items-center mt-4 self-center">
+        <div class="flex w-full justify-center   gap-4 items-center mt-4 ">
           <div class=" flex flex-col gap-2 items-center">
             <button class="px-8 py-3 border-[1px] rounded-lg focus:bg-white transition-all duration-300 focus:text-black flex justify-center items-center">
                 <Icon size="22px" name="cib:cashapp" ></Icon>     
@@ -153,24 +153,21 @@ const print = () => {
   }, 2000);
 };
 
-
 const remove = (item) => {
-      transH(item);
-  setTimeout(() => {
-      orderStore.orderItems = orderStore.orderItems.filter(
+     item.count = 0;
+ orderStore.orderItems = orderStore.orderItems.filter(
     (orderItem) => orderItem.name !== item.name
-    );
-
-  }, 700);
-
-
-
-  item.count = 0;
-
-
-
+  );
+  //  transH(item);
+ 
+  // setTimeout(() => {
+   
+ 
+  
+    
+  // }, 700);
+   
 };
-
 
 const paymentHeight = computed(() => {
   if (orderStore.orderItems.length == 0) {
@@ -180,21 +177,12 @@ const paymentHeight = computed(() => {
   }
 });
 
+// const transH = (item) => {
+//   if (item.count == 0) {
+//     document.getElementById(`${item.name}`).classList.add("hide")
+//     document.getElementById(`${item.name}`).classList.remove("show")
+//   }
 
 
-const transH = (item) => {
-
-  if (item.count == 0) {
-    document.getElementById(`${item.name}`).classList.add("hide")
-    document.getElementById(`${item.name}`).classList.remove("show")
-  };
-
-  document.getElementById(`${item.name}`).classList.add("hide")
-  document.getElementById(`${item.name}`).classList.remove("show")
-  console.log(document.getElementById(`${item.name}`).classList);
-}
-
-
-
-           
+// };
 </script>

@@ -146,7 +146,7 @@ export const useMenuStore = defineStore("Menu", {
         name: "Suschi",
         icon: "bxs:sushi",
         color: "#c9caef",
-
+       
         items: [{
           id: 1,
           name: "Sushi",

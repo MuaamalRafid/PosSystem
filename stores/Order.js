@@ -30,7 +30,7 @@ export const useOrderStore = defineStore('Order', () => {
     return subtotal.value + tax.value;
   });
 
-
+  
 
   return {
     orderItems,
@@ -38,5 +38,6 @@ export const useOrderStore = defineStore('Order', () => {
     subtotal,
     tax,
     total,
+  
   };
 });

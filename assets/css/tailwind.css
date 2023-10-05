@@ -19,3 +19,9 @@
 .show{
   @apply translate-x-0;
 }
+
+body{
+  @apply bg-MainColor print:bg-white;
+}
+
+

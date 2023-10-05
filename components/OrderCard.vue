@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <div class="grid grid-cols-4 gap-3 h-80 overflow-y-scroll bg-MainColor">
+  <div class="" >
+    <div class="grid grid-cols-4 gap-3  h-96 overflow-y-scroll ">
 
 
     <div v-for="item in items" :key="item.id"
     
-   class="card flex flex-col gap-4 relative   bg-SecondryColor h-40 w-52 py-2 px-4 rounded-md cursor-pointer group "
+   class="card flex flex-col gap-4 relative   bg-SecondryColor h-40  py-2 px-4 rounded-md cursor-pointer group "
       >
       <div :style="`background-color:${menuStore.Menu[menuStore.selectedIde - 1].color}`" class=" z-0 top-0 left-0 absolute h-full  w-2 rounded-tl-md rounded-bl-md group-hover:w-full group-hover:rounded-md transition-all duration-500"></div>
         <p class="z-10 text-[12px] group-hover:text-MainColor text-gray-400">Odrder --> Kitchen</p>
@@ -14,11 +14,11 @@
             <p class=" group-hover:text-MainColor text-gray-400">{{item.price}}$</p>
         </div>
         <div class=" z-10 self-end flex justify-center items-center gap-4">
-            <button @click="discrment(item)" class="text-2xl group-hover:text-MainColor group-hover:border-MainColor text-white font-thin border-[1px] rounded-lg w-6 h-6 flex justify-center items-center pb-1">
+            <button @click="discrment(item)" class="text-2xl group-hover:text-MainColor group-hover:border-MainColor text-white font-thin border-[1px] rounded-lg w-6 h-6 flex justify-center items-center pb-0 md:pb-1">
                 <div>-</div>
             </button>
             <p class="  text-xl group-hover:text-MainColor text-white font-thin">{{item.count}}</p>
-            <button @click="increment(item)"  class="text-2xl text-white group-hover:text-MainColor group-hover:border-MainColor font-thin border-[1px] rounded-lg w-6 h-6 flex justify-center items-center pb-2">
+            <button @click="increment(item)"  class="text-2xl text-white group-hover:text-MainColor group-hover:border-MainColor font-thin border-[1px] rounded-lg w-6 h-6 flex justify-center items-center p-0 md:pb-2 ">
                 <div>+</div>
             </button>
         </div>
@@ -39,10 +39,15 @@ const menuStore = useMenuStore();
 import { useOrderStore } from '~/stores/Order';
 const orderStore = useOrderStore();
 
+
+
+
+
+
 const increment = (item) => {
   item.count++;
   addToOrder(item);
-  
+  console.log(orderStore.orderItems)
 }
 
 const discrment = (item) => {
@@ -61,21 +66,19 @@ const addToOrder = (item) => {
     transS(item);
   }, 200);
   orderStore.orderItems.push(item);
-
- 
 };
 
   
 const transS = (item) => {
- document.getElementById(`${item.name}`).classList.add("show")
-  console.log(document.getElementById(`${item.name}`).classList);
+  if (item.count > 0) {
+      document.getElementById(`${item.name}`).classList.remove("hide")
+  document.getElementById(`${item.name}`).classList.add("show")
+   }
 }
 
 const removeFromOrder = (item) => {
-  
     const index = orderStore.orderItems.indexOf(item);
     orderStore.orderItems.splice(index, 1);
-
 };
 
 
