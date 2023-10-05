@@ -1,7 +1,7 @@
 <template>
    <!-- ?حل مشكلة السايدبار من ناحية الطول  -->
   <div class="">
-    <div class="text-white  pt-10 flex flex-col gap-10 pl-10 h-full">
+    <div class="text-white  pt-10 flex flex-col  gap-10 pl-10 h-full">
       <div class="logo font-bold text-2xl  w-fit ">Muaamal</div>
       <div class="flex flex-col gap-60">
         <ul class="flex flex-col gap-4 w-40 text-[#898a8a]">
@@ -74,7 +74,8 @@
   
     
     </div>
+    
   </div>
-   
+   <slot></slot>
 </template>
 

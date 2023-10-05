@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="grid md:grid-cols-4 grid-cols-3 gap-3 ">
+    <div class="grid md:grid-cols-4 grid-cols-3 gap-3 w-[85%]">
       <div
         @click="clickId(item)"
         v-for="item in Menu"
