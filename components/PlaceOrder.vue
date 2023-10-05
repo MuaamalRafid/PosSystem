@@ -1,6 +1,6 @@
 <template>
   <div id="print">
-    <div v-if="orderStore.uniqueOrderItems.length>0" class="max-h-[325px] w-full  print:max-h-full print:overflow-visible  overflow-hidden  overflow-y-scroll rounded-md">
+    <div v-if="orderStore.uniqueOrderItems.length>0" class="max-h-[350px] w-full  print:max-h-full print:overflow-visible  overflow-hidden  overflow-y-scroll rounded-md">
       <div
      
       v-for="(item,index) in orderStore.uniqueOrderItems" :key="item.id"
