@@ -50,3 +50,16 @@
     </div>
   </div>
 </template>
+
+<script setup>
+useHead({
+  title: "Menu",
+  meta: [
+    {
+      name: "description",
+      content: "This is an example of a meta description. This will show up in search results.",
+    },
+    { property: "og:title", content: "Home" },
+  ],
+});
+</script>

@@ -5,31 +5,49 @@
       <div class="logo font-bold text-2xl  w-fit ">Muaamal</div>
       <div class="flex flex-col gap-60">
         <ul class="flex flex-col gap-4 w-40 text-[#898a8a]">
-          <button 
-            class=" focus:text-white focus:px-3 focus:py-2 focus:bg-SecondryColor focus:rounded-lg  w-full transition-all duration-300 flex justify-start"
+      
+          <NuxtLink to="reservation">
+            <button 
+            class=" w-full transition-all duration-300 flex justify-start"
           >
             <li>Reservation</li>
           </button>
-          <button
+          </NuxtLink>
+
+
+         <NuxtLink to="tableServices">
+           <button
             class="focus:text-white focus:px-3 focus:py-2 focus:bg-SecondryColor focus:rounded-lg w-full transition-all duration-300 flex justify-start"
           >
             <li>Table services</li>
           </button>
-          <button
+         </NuxtLink>
+
+
+
+         <NuxtLink to="/">
+           <button
             class="focus:text-white focus:px-3 focus:py-2 focus:bg-SecondryColor focus:rounded-lg w-full transition-all duration-300 flex justify-start"
           >
             <li class="">Menu</li>
           </button>
-          <button
+         </NuxtLink>
+
+        <NuxtLink to="/delivery">
+            <button
             class="focus:text-white focus:px-3 focus:py-2 focus:bg-SecondryColor focus:rounded-lg w-full transition-all duration-300 flex justify-start"
           >
             <li>Delivery</li>
           </button>
-          <button
+        </NuxtLink>
+
+          <NuxtLink to="/accounting">
+            <button
             class="focus:px-3 focus:text-white focus:py-2 focus:bg-SecondryColor focus:rounded-lg w-full transition-all duration-300 flex justify-start"
           >
             <li>Accounting</li>
           </button>
+      </NuxtLink>
         </ul>
 
       <div class="flex flex-col justify-start gap-44 ">
