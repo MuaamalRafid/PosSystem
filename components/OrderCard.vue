@@ -1,6 +1,6 @@
 <template>
   <div class="" >
-    <div class="grid grid-cols-4 gap-3  h-96 overflow-y-scroll w-[85%] ">
+    <div class="grid grid-cols-4 gap-3  h-96 overflow-y-scroll overflow-hidden w-[85%] ">
 
 
     <div v-for="item in items" :key="item.id"
