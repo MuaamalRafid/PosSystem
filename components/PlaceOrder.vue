@@ -180,20 +180,21 @@ const print = () => {
 
 const remove = (item) => {
   item.count = 0;
-      //  transH(item);
+  //  transH(item);
   orderStore.orderItems = orderStore.orderItems.filter(
     (orderItem) => orderItem.name !== item.name
   );
 
 
-//   setTimeout(() => {
+  //   setTimeout(() => {
 
 
 
 
-//   }, 700);
+  //   }, 700);
 
-// };
+  // };
+};
 
 const paymentHeight = computed(() => {
   if (orderStore.orderItems.length == 0) {
