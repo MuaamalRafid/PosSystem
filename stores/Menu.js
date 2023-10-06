@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 
 export const useMenuStore = defineStore("Menu", {
     state: () => ({
-    selectedIde: 1,
+    selectedIde: 0,
     Menu: [
       {
         id: 1,
@@ -331,5 +331,6 @@ export const useMenuStore = defineStore("Menu", {
         ],
       },
     ],
-    }),
+  }),
+
 });

@@ -2,7 +2,7 @@
   <div>
     <div class="grid md:grid-cols-4 grid-cols-3 gap-3 w-[85%]">
       <div
-        @click="clickId(item)"
+        @click="getId(item.id)"
         v-for="item in Menu"
         :key="item.id"
         :style="`background-color:${item.color}`"
@@ -23,7 +23,7 @@ import { storeToRefs } from "pinia";
 import { useMenuStore } from "~/stores/Menu";
 const menuStore = useMenuStore();
 const { Menu, selectedIde } = storeToRefs(menuStore);
-const clickId = (item) => {
-  selectedIde.value = item.id;
+const getId = (id) => {
+  selectedIde.value = id-1;
 };
 </script>
