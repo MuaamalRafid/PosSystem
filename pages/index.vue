@@ -1,12 +1,11 @@
 <template>
-  <!-- ?حل مشكلة السايدبار من ناحية الطول  -->
 
-  <div class="">
-    <div class="flex justify-between h-screen">
-      <NuxtLayout class="w-[20%]" name="left-side-bar"></NuxtLayout>
 
-      <div class="w-[80%] flex">
-     <div>
+  <div class="h-screen">
+ 
+
+      <div class=" flex justify-around">
+     <div class="w-[70%]">
          <div class="pt-8 mb-8">
           <div
             class="bg-SecondryColor w-fit rounded-md px-4 py-2 flex gap-2 justify-center items-center"
@@ -36,22 +35,31 @@
 
         </div> -->
            <div
-        class="text-white py-8 w-[50%] pr-12 pl-6 flex flex-col gap-4 transition-all duration-300"
+        class="text-white py-8 pr-12 pl-6 w-[30%] flex flex-col gap-4 transition-all duration-300"
       >
         <div class="flex flex-col gap-1">
           <div class="logo font-bold text-xl">Table 5</div>
           <p class="text-sm text-gray-400">Lesli K.</p>
         </div>
 
-        <PlaceOrder />
+        <div>
+         <PlaceOrder />
+        </div>
       </div>
       </div>
    
-    </div>
+    
   </div>
 </template>
 
 <script setup>
+
+
+
+
+definePageMeta({
+  layout: "left-side-bar",
+});
 useHead({
   title: "Menu",
   meta: [
@@ -62,4 +70,6 @@ useHead({
     { property: "og:title", content: "Home" },
   ],
 });
+
+
 </script>

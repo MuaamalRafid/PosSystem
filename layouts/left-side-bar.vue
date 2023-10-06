@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div>
+  <div class="flex gap-36 ">
+    <div class="">
       <LeftSideBar />
     </div>
     <slot></slot>

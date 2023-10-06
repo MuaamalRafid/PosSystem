@@ -59,18 +59,21 @@ const items = computed(()=>menuStore.Menu[menuStore.selectedIde].items);
 
 
 const addToOrder = (item) => {
+
  setTimeout(() => {
-    transS(item);
-  }, 200);
+   transS(item);
+ }, 200);
   orderStore.orderItems.push(item);
 };
 
   
 const transS = (item) => {
-  if (item.count > 0) {
-      document.getElementById(`${item.name}`).classList.remove("hide")
+  
+if (item.count > 0 && document.getElementById(`${item.name}`).classList.contains("hide")) {
+  document.getElementById(`${item.name}`).classList.remove("hide")
   document.getElementById(`${item.name}`).classList.add("show")
-   }
+  }
+    
 }
 
 const removeFromOrder = (item) => {

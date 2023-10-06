@@ -102,39 +102,10 @@
 
         <div class="flex flex-col print:hidden">
           <h1>Pyment Method</h1>
-          <div class="flex w-full justify-center gap-4 items-center mt-4">
-            <div class="flex flex-col gap-2 items-center">
-              <button
-                class="px-8 py-3 border-[1px] rounded-lg focus:bg-white transition-all duration-300 focus:text-black flex justify-center items-center"
-              >
-                <Icon size="22px" name="cib:cashapp"></Icon>
-              </button>
-              <p class="text-sm font-semibold">Cash</p>
-            </div>
-            <div class="flex flex-col gap-2 items-center">
-              <button
-                class="px-8 py-3 border-[1px] rounded-lg focus:bg-white transition-all duration-300 focus:text-black flex justify-center items-center"
-              >
-                <Icon
-                  size="22px"
-                  name="streamline:money-atm-card-1-credit-pay-payment-debit-card-finance-plastic-money"
-                ></Icon>
-              </button>
-              <p class="text-sm font-semibold">Depit Card</p>
-            </div>
-            <div class="flex flex-col gap-2 items-center">
-              <button
-                class="px-8 py-3 border-[1px] rounded-lg focus:bg-white transition-all duration-300 focus:text-black flex justify-center items-center"
-              >
-                <Icon
-                  size="22px"
-                  name="ic:baseline-account-balance-wallet"
-                ></Icon>
-              </button>
-              <p class="text-sm font-semibold">E-Wallet</p>
-            </div>
-          </div>
-          <button
+          <div class="flex flex-col  justify-center gap-4 items-center mt-4 min-w-full">
+ 
+     <div>
+            <button
             @click="print"
             :disabled="orderStore.orderItems.length <= 0"
             class="disabled:cursor-not-allowed bg-white text-MainColor rounded-full flex justify-center transition-all duration-300 items-center py-2 mt-4 self-center w-64"
@@ -149,6 +120,9 @@
               Place Order
             </div>
           </button>
+    </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -198,7 +172,7 @@ const remove = (item) => {
 
 const paymentHeight = computed(() => {
   if (orderStore.orderItems.length == 0) {
-    return "h-[800px]";
+    return "h-[750px]";
   } else {
     return "h-[450px]";
   }
